@@ -1,2 +1,2 @@
-# whatsapp-clone
-Clone of whatsapp web app
+# instagram-clone
+Clone of instagram web app
