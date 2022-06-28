@@ -1,0 +1,165 @@
+#main{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+#connexion-div{
+    display: grid;
+    grid-template-columns: 50% 50%;
+    padding: 10px;
+    column-gap: 25px;
+    width: 50%;
+}
+
+#left-side {
+    display: grid;
+    justify-content: center;
+}
+
+#exampleDiv{
+    border: 5px solid rgb(74, 73, 73);
+    border-radius: 15px;
+}
+
+#right-side{
+    display: grid;
+    justify-content: center;
+    row-gap: 10px;
+    padding: 0px 10px 0px 10px;
+}
+
+#gmailLogo{
+    width: 16px;
+    height: auto;
+}
+
+#appleAppLink, #androidAppLink{
+    width: 136px;
+    height: auto;
+}
+
+#formDiv {
+    padding: 20px;
+    border: 1px solid grey;
+}
+
+#formLogo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#loginForm {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 0px 10px 0px 10px;
+}
+
+#inputsDiv{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    row-gap: 20px;
+    padding: 15px;
+}
+
+#alternativeLogin{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#gmailDiv {
+    display: flex;
+    justify-content: center;
+}
+
+#resetPwdDiv {
+    display: flex;
+    justify-content: center;
+}
+
+#sign-up-div {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    border: 1px solid grey;
+    padding: 0px 10px 0px 10px;
+}
+
+#downloadable-apps {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    padding: 0px 20px 0px 20px;
+}
+
+#appLinks {
+    display: flex;
+    column-gap: 10px;
+}
+
+#footer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10px;
+    padding-top: 10px;
+    border-top: 1px solid grey;
+}
+
+#footer-links {
+    display: flex;
+    column-gap: 20px;
+}
+
+#gmailLink{
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    column-gap: 10px;
+}
+
+input {
+    height: 30px;
+    border-radius: 5px;
+    border: 1px solid grey;
+}
+
+#connexionButton {
+    background-color: rgb(78, 142, 211);
+    border: none;
+    height: 30px;
+    border-radius: 5px;
+}
+
+a {
+    text-decoration: none;
+    color: rgb(31, 107, 189);
+}
+
+a:link {
+    text-decoration: none;
+}
+
+a:visited {
+    text-decoration: none;
+}
+
+a:focus {
+    text-decoration: none;
+}
+
+#gmailDiv a:hover {
+    text-decoration: none;
+}
+
+#gmailDiv a:active {
+    text-decoration: none;
+}
