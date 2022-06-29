@@ -1,7 +1,12 @@
 import instagramTitle from "../images/instagram-title.png";
 import gmailLogo from "../images/gmail-logo.png";
 import { initializeApp } from "firebase/app";
-import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
+import {
+  getAuth,
+  signInWithPopup,
+  createUserWithEmailAndPassword,
+  GoogleAuthProvider,
+} from "firebase/auth";
 
 const firebaseConfig = {
   apiKey: "AIzaSyBdMTy_-WwjSSBNvLjYW_iT1_AGQBD0M8M",
@@ -13,6 +18,7 @@ const firebaseConfig = {
 };
 
 const app = initializeApp(firebaseConfig);
+const provider = new GoogleAuthProvider();
 const auth = getAuth(app);
 
 function ConnexionForm() {
@@ -26,6 +32,7 @@ function ConnexionForm() {
       connexionButton.disabled = true;
     }
   };
+
   const connexion = (e) => {
     e.preventDefault();
     const email = document.getElementById("login-input").value;
@@ -44,6 +51,30 @@ function ConnexionForm() {
         console.log(errorMessage);
       });
   };
+
+  const gmailLogin = () => {
+    signInWithPopup(auth, provider)
+      .then((result) => {
+        // This gives you a Google Access Token. You can use it to access the Google API.
+        const credential = GoogleAuthProvider.credentialFromResult(result);
+        const token = credential.accessToken;
+        console.log(token);
+        const user = result.user;
+        console.log(user);
+      })
+      .catch((error) => {
+        // Handle Errors here.
+        const errorCode = error.code;
+        const errorMessage = error.message;
+        console.log(errorCode);
+        console.log(errorMessage);
+        const email = error.customData.email;
+        console.log(email);
+        const credential = GoogleAuthProvider.credentialFromError(error);
+        console.log(credential);
+      });
+  };
+
   return (
     <div id="formDiv">
       <form id="loginForm">
@@ -53,7 +84,7 @@ function ConnexionForm() {
               src={instagramTitle}
               alt="logo of the instagram title"
               id="instagramTitle"
-            ></img>
+            />
           </a>
         </div>
         <div id="inputsDiv">
@@ -62,36 +93,36 @@ function ConnexionForm() {
             id="login-input"
             onChange={checkInputs}
             required
-          ></input>
+          />
           <input
             type="password"
             id="password-input"
             onChange={checkInputs}
             required
-          ></input>
+          />
           <button id="connexionButton" onClick={connexion}>
             Se connecter
           </button>
         </div>
-        <div id="alternativeLogin">
-          <p>OU</p>
-        </div>
-        <div id="gmailDiv">
-          <a href="/gmail" id="gmailLink" target="_blank">
-            <img src={gmailLogo} alt="logo of gmail" id="gmailLogo"></img>
-            <p>Se connecter avec Gmail</p>
-          </a>
-        </div>
-        <div id="resetPwdDiv">
-          <a
-            target="_blank"
-            href="https://www.instagram.com/accounts/password/reset/"
-            rel="noreferrer"
-          >
-            Mot de passe oublié ?
-          </a>
-        </div>
       </form>
+      <div id="alternativeLogin">
+        <p>OU</p>
+      </div>
+      <div id="gmailDiv">
+        <button id="gmailLogin" onClick={gmailLogin}>
+          <img src={gmailLogo} alt="logo of gmail" id="gmailLogo" />
+          <span>Se connecter avec Gmail</span>
+        </button>
+      </div>
+      <div id="resetPwdDiv">
+        <a
+          target="_blank"
+          href="https://www.instagram.com/accounts/password/reset/"
+          rel="noreferrer"
+        >
+          Mot de passe oublié ?
+        </a>
+      </div>
     </div>
   );
 }
