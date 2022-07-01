@@ -161,13 +161,6 @@ body {
   column-gap: 20px;
 }
 
-#gmailLink {
-  display: flex;
-  align-items: center;
-  justify-content: space-evenly;
-  column-gap: 10px;
-}
-
 input {
   height: 30px;
   border-radius: 3px;

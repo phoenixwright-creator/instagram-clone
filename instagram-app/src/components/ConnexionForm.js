@@ -18,7 +18,7 @@ const firebaseConfig = {
 };
 
 const app = initializeApp(firebaseConfig);
-const provider = new GoogleAuthProvider();
+const Googleprovider = new GoogleAuthProvider();
 const auth = getAuth(app);
 
 function ConnexionForm() {
@@ -33,8 +33,8 @@ function ConnexionForm() {
     }
   };
 
-  const connexion = (e) => {
-    e.preventDefault();
+  const connexion = (event) => {
+    event.preventDefault();
     const email = document.getElementById("login-input").value;
     console.log(email);
     const password = document.getElementById("password-input").value;
@@ -43,17 +43,18 @@ function ConnexionForm() {
       .then((userCredential) => {
         const user = userCredential.user;
         console.log(user);
+        window.location.href = `profile/${email}`;
       })
       .catch((error) => {
         const errorCode = error.code;
         const errorMessage = error.message;
-        console.log(errorCode);
-        console.log(errorMessage);
+        alert(errorCode);
+        alert(errorMessage);
       });
   };
 
   const gmailLogin = () => {
-    signInWithPopup(auth, provider)
+    signInWithPopup(auth, Googleprovider)
       .then((result) => {
         // This gives you a Google Access Token. You can use it to access the Google API.
         const credential = GoogleAuthProvider.credentialFromResult(result);
@@ -61,17 +62,18 @@ function ConnexionForm() {
         console.log(token);
         const user = result.user;
         console.log(user);
+        window.location.href = `profile/${user.email}`;
       })
       .catch((error) => {
         // Handle Errors here.
         const errorCode = error.code;
         const errorMessage = error.message;
-        console.log(errorCode);
-        console.log(errorMessage);
+        alert(errorCode);
+        alert(errorMessage);
         const email = error.customData.email;
-        console.log(email);
+        alert(email);
         const credential = GoogleAuthProvider.credentialFromError(error);
-        console.log(credential);
+        alert(credential);
       });
   };
 
