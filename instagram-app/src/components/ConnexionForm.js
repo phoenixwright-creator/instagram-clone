@@ -112,7 +112,7 @@ function ConnexionForm() {
       </div>
       <div id="gmailDiv">
         <button id="gmailLogin" onClick={gmailLogin}>
-          <img src={gmailLogo} alt="logo of gmail" id="gmailLogo" />
+          <img src={gmailLogo} alt="logo of gmail" className="gmailLogo" />
           <span>Se connecter avec Gmail</span>
         </button>
       </div>

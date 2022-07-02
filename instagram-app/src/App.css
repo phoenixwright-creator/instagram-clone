@@ -35,7 +35,7 @@ body {
   padding: 0px 10px 0px 10px;
 }
 
-#gmailLogo {
+.gmailLogo {
   width: 16px;
   height: auto;
 }
@@ -215,4 +215,63 @@ a:active {
 #footer-links a {
   text-decoration: none;
   color: rgb(142, 142, 142);
+}
+
+#signUpForm {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  row-gap: 10px;
+  padding: 10px;
+}
+
+#newAccountForm {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  row-gap: 10px;
+  padding: 10px;
+  border: 1px solid rgb(219, 219, 219);
+}
+
+#gmailButton {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  column-gap: 10px;
+  padding: 10px;
+  border: 1px solid rgb(219, 219, 219);
+}
+
+#connexion {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  column-gap: 10px;
+  padding: 10px;
+  border: 1px solid rgb(219, 219, 219);
+}
+
+#inputs {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  row-gap: 10px;
+}
+
+#inputs input {
+  padding-left: 10px;
+  padding-right: 10px;
+  border: 1px solid rgb(219, 219, 219);
+}
+
+#warningNote {
+  text-align: center;
+}
+
+#generalConditions {
+  text-align: center;
 }
