@@ -8,7 +8,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 90vh;
+  
   background-color: #fafafa;
 }
 
@@ -146,11 +146,9 @@ body {
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
-  height: 10vh;
+  
   width: 100%;
-  position: fixed;
-  left: 0;
-  bottom: 0;
+  position: relative;
   background-color: #fafafa;
   color: rgb(142, 142, 142);
   font-size: 0.8rem;
